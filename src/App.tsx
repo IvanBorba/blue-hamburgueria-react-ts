@@ -1,11 +1,12 @@
 import "./App.css";
+import Router from "./router";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <div>App</div>
+      <Router />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,3 +1,4 @@
+import { SearchIcon } from "../../assets/icons";
 import Menu from "../../components/Menu";
 import * as Styled from "./styles";
 
@@ -5,17 +6,17 @@ const Home = () => {
   return (
     <Styled.HomeContainer>
       <Menu path="home" />
-      <div className="home-content">
-        <header>
+      <Styled.HomeContentContainer>
+        <Styled.HomeContentHeader>
           <div>
             <h1>Burguer Fresh</h1>
             <p>{new Date(Date.now()).toLocaleString()}</p>
           </div>
           <div>
-            <img alt="search-icon" />
+            <SearchIcon />
             <input />
           </div>
-        </header>
+        </Styled.HomeContentHeader>
         <section>
           <div>
             <p>Lanches</p> {/* Dado mockado */}
@@ -34,7 +35,7 @@ const Home = () => {
             <div>Card</div> {/* Dado mockado */}
           </div>
         </section>
-      </div>
+      </Styled.HomeContentContainer>
       <aside>
         <header>
           <h2>Pedido 12</h2> {/* Dado mockado, número do pedido */}

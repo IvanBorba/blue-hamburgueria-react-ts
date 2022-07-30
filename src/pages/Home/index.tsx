@@ -22,15 +22,28 @@ const Home = () => {
           </Styled.SearchInputContainer>
         </Styled.HomeContentHeader>
         <section>
-          <div>
-            <p>Lanches</p> {/* Dado mockado */}
-          </div>
-          <div>
+          <Styled.CategoriesNavigationBar>
+            <Styled.CategoriesNavigationButton active>
+              Lanches
+            </Styled.CategoriesNavigationButton>
+            <Styled.CategoriesNavigationButton>
+              Porções
+            </Styled.CategoriesNavigationButton>
+            <Styled.CategoriesNavigationButton>
+              Bebidas
+            </Styled.CategoriesNavigationButton>
+          </Styled.CategoriesNavigationBar>
+          <Styled.ProductsHeaderContainer>
             <h2>Escolha seu lanche</h2>
-            <select>
+            <Styled.TableSelect defaultValue="">
+              <option value="" disabled>
+                Selecione a mesa
+              </option>
               <option value="1">1</option>
-            </select>
-          </div>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </Styled.TableSelect>
+          </Styled.ProductsHeaderContainer>
           <div className="list">
             <div>Card</div> {/* Dado mockado */}
             <div>Card</div> {/* Dado mockado */}

@@ -11,7 +11,7 @@ import batataFritaG from "../assets/images/batata-frita-g.png";
 import cocaGarrafa from "../assets/images/coca-garrafa.png";
 import cocaLata from "../assets/images/coca-lata.png";
 
-export const MockedProducts: T.Product[] = [
+export const mockedProducts: T.Product[] = [
   {
     id: "3df26203-5a36-402b-ac7d-437339db15bf",
     name: "Burguer Salada",
@@ -38,7 +38,7 @@ export const MockedProducts: T.Product[] = [
     id: "b201ee19-c00d-4e2a-bdf0-f4101348f1b5",
     name: "Burguer Carne e Frango",
     description:
-      "Hamburguer com duas carnes, um bife bovino de 180g e duas peças de peito de frango empanado com parmesão.",
+      "Hamburguer com duas carnes, um bife bovino de 180g e duas peças de peito de frango.",
     price: 28.99,
     image: burguerCarneEFrango,
     categoryId: "ef215c07-a2e4-495c-9e0f-5c10cc971d11",
@@ -130,7 +130,7 @@ export const MockedProducts: T.Product[] = [
   },
 ];
 
-export const MockedCategories: T.Category[] = [
+export const mockedCategories: T.Category[] = [
   {
     id: "ef215c07-a2e4-495c-9e0f-5c10cc971d11",
     name: "Lanches",
@@ -151,7 +151,7 @@ export const MockedCategories: T.Category[] = [
   },
 ];
 
-export const MockedTables: T.Table[] = [
+export const mockedTables: T.Table[] = [
   {
     id: "922135eb-97dd-47cb-b5d5-7497c753ad57",
     number: 1,
@@ -184,7 +184,7 @@ export const MockedTables: T.Table[] = [
   },
 ];
 
-export const MockedUsers: T.User[] = [
+export const mockedUsers: T.User[] = [
   {
     id: "6d6cf9d2-cf94-4b90-a53b-973d92501e02",
     name: "Ivan Borba",
@@ -195,7 +195,7 @@ export const MockedUsers: T.User[] = [
   },
 ];
 
-export const MockedFavorites: T.Favorite[] = [
+export const mockedFavorites: T.Favorite[] = [
   {
     id: "35abf7f1-c999-4bcf-abfb-a95cb483a2b9",
     productName: "Burguer Salada e Queijo Especial",
@@ -210,7 +210,7 @@ export const MockedFavorites: T.Favorite[] = [
   },
 ];
 
-export const MockedOrders: T.Order[] = [
+export const mockedOrders: T.Order[] = [
   {
     id: "e45555e4-8933-420b-bedb-9814c9a8374d",
     tableNumber: 1,
@@ -219,7 +219,7 @@ export const MockedOrders: T.Order[] = [
   },
 ];
 
-export const MockedOrdersToProducts: T.OrderToProduct[] = [
+export const mockedOrdersToProducts: T.OrderToProduct[] = [
   {
     id: "41889bd0-a2a1-454d-823d-eb5d73d73e59",
     productId: "10c6c5d1-24eb-436d-a21a-0c9b8516f9fa",

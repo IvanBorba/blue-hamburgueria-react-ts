@@ -7,6 +7,7 @@ import ProductsList from "../../components/ProductsList";
 import { mockedCategories } from "../../mocks";
 import { useState } from "react";
 import { Category, Product } from "../../types";
+import OrderDetails from "../../components/OrderDetails";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category>(
@@ -61,39 +62,7 @@ const Home = () => {
           <ProductsList list={filteredProducts} />
         </section>
       </Styled.HomeContentContainer>
-      <aside>
-        <header>
-          <h2>Pedido 12</h2> {/* Dado mockado, número do pedido */}
-          <div>
-            <button>Comer no Local</button>
-            <button>P/ Viagem</button>
-            <button>Delivery</button>
-          </div>
-        </header>
-        <div>
-          <div>
-            <h3>Item</h3>
-            <h3>Qtd</h3>
-            <h3>Preço</h3>
-          </div>
-          <div className="checkout-cards-container">
-            <div>Card checkout</div> {/* Dado mockado */}
-            <div>Card checkout</div> {/* Dado mockado */}
-            <div>Card checkout</div> {/* Dado mockado */}
-          </div>
-        </div>
-        <div>
-          <div>
-            <p>Desconto</p>
-            <p>R$0.00</p>
-          </div>
-          <div>
-            <p>Sub total</p>
-            <p>R$0.00</p>
-          </div>
-          <button>Continuar para o pagamento</button>
-        </div>
-      </aside>
+      <OrderDetails />
     </Styled.HomeContainer>
   );
 };

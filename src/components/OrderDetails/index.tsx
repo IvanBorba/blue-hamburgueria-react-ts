@@ -7,38 +7,48 @@ const OrderDetails = () => {
       <Styled.OrderDetailsHeader>
         <h2>Pedido #12</h2> {/* Dado mockado, número do pedido */}
         <div>
-          <button>Comer no Local</button>
-          <button>P/ Viagem</button>
-          <button>Delivery</button>
+          <Button text="Comer no local" onClick={() => {}} size="small" />
+          <Button
+            text="P/ Viagem"
+            onClick={() => {}}
+            size="small"
+            variant="disabled"
+          />
+          <Button
+            text="Delivery"
+            onClick={() => {}}
+            size="small"
+            variant="disabled"
+          />
         </div>
       </Styled.OrderDetailsHeader>
-      <div>
-        <div>
+      <Styled.CheckoutDetailsContainer>
+        <Styled.CheckoutDetailsHeader>
           <h3>Item</h3>
           <h3>Qtd</h3>
           <h3>Preço</h3>
-        </div>
+        </Styled.CheckoutDetailsHeader>
         <div className="checkout-cards-container">
           <div>Card checkout</div> {/* Dado mockado */}
           <div>Card checkout</div> {/* Dado mockado */}
           <div>Card checkout</div> {/* Dado mockado */}
         </div>
-      </div>
-      <div>
+      </Styled.CheckoutDetailsContainer>
+      <Styled.OrderDetailsFooter>
         <div>
           <p>Desconto</p>
-          <p>R$0.00</p>
+          <h3>R$0.00</h3>
         </div>
         <div>
           <p>Sub total</p>
-          <p>R$0.00</p>
+          <h3>R$0.00</h3>
         </div>
         <Button
           text="Continue para o pagamento"
           onClick={() => {}}
           size="large"
         />
-      </div>
+      </Styled.OrderDetailsFooter>
     </Styled.OrderDetailsContainer>
   );
 };

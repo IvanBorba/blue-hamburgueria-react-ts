@@ -17,10 +17,6 @@ const Home = () => {
     (element) => element.categoryId === selectedCategory.id
   );
 
-  const handleChangeCategory = (category: Category) => {
-    setSelectedCategory(category);
-  };
-
   const actualDate = DateTime.now();
   const formatedDate = `${actualDate.weekdayShort}, ${actualDate.day} ${actualDate.monthLong} ${actualDate.year}`;
 
@@ -44,7 +40,7 @@ const Home = () => {
               return (
                 <Styled.CategoriesNavigationButton
                   active={element.name === selectedCategory.name}
-                  onClick={() => handleChangeCategory(element)}
+                  onClick={() => setSelectedCategory(element)}
                 >
                   {element.name}
                 </Styled.CategoriesNavigationButton>

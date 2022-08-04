@@ -8,7 +8,7 @@ export const StyledInput = styled.input<StyledInputProps>`
   ${({ theme, inputSize }) => css`
     all: unset;
     padding: 0 1rem;
-    margin-right: 0.625rem;
+    box-sizing: border-box;
     width: 18.625rem;
     height: 3rem;
     background-color: ${theme.colors.baseBg1};

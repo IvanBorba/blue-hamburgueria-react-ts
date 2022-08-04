@@ -6,6 +6,7 @@ export const CheckoutCardContainer = styled.div`
     height: 6.625rem;
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.625rem;
   `}
 `;
 

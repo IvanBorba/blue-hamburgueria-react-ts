@@ -50,7 +50,7 @@ const OrderDetails = () => {
         <Button
           text="Continue para o pagamento"
           onClick={() => toast.error("Sessão em desenvolvimento!")}
-          size="large"
+          size="x-large"
         />
       </Styled.OrderDetailsFooter>
     </Styled.OrderDetailsContainer>

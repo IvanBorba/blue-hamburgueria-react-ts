@@ -5,11 +5,15 @@ import * as Styled from "./styles";
 import { mockedProducts } from "../../mocks";
 import ProductsList from "../../components/ProductsList";
 import { mockedCategories } from "../../mocks";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { Category, Product } from "../../types";
 import OrderDetails from "../../components/OrderDetails";
 
-const Home = () => {
+interface HomeProps {
+  setLogged: Dispatch<SetStateAction<boolean>>;
+}
+
+const Home = ({ setLogged }: HomeProps) => {
   const [selectedCategory, setSelectedCategory] = useState<Category>(
     mockedCategories[0]
   );
@@ -23,7 +27,7 @@ const Home = () => {
 
   return (
     <Styled.HomeContainer>
-      <Menu path="home" />
+      <Menu path="home" setLogged={setLogged} />
       <Styled.HomeContentContainer>
         <Styled.HomeContentHeader>
           <Styled.TitleContainer>

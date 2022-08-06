@@ -133,8 +133,8 @@ export const InfoIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="14"
+      height="14"
       fill="none"
       viewBox="0 0 20 20"
     >
@@ -167,8 +167,8 @@ export const MarketIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
+      width="14"
+      height="14"
       fill="none"
       viewBox="0 0 20 20"
     >

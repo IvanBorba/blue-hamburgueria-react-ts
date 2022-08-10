@@ -5,6 +5,7 @@ import Button from "../../components/Button";
 import { Dispatch, SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import axios from "axios";
 
 interface LoginProps {
   setLogged: Dispatch<SetStateAction<boolean>>;
@@ -17,14 +18,30 @@ const Login = ({ setLogged }: LoginProps) => {
   const [password, setPassword] = useState<string>("");
 
   const handleLogin = () => {
-    if (email === "admin" && password === "admin") {
-      setLogged(true);
-      navigate("/");
-      toast.success("Login bem sucedido!");
-      return;
+    if (email !== "" && password !== "") {
+      const data = {
+        email,
+        password,
+      };
+
+      return axios
+        .post(
+          "https://blue-hamburgueria-production.up.railway.app/auth/login",
+          data
+        )
+        .then((res) => {
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("user", JSON.stringify(res.data.user));
+          setLogged(true);
+          navigate("/");
+          toast.success("Login bem sucedido!");
+        })
+        .catch(() => {
+          toast.error("Usuário ou senha inválido");
+        });
     }
 
-    toast.error("Usuário ou senha incorretos.");
+    toast.error("Preencha os campos de Login");
   };
 
   return (

@@ -9,11 +9,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { Category, Product } from "../../types";
 import OrderDetails from "../../components/OrderDetails";
 
-interface HomeProps {
-  setLogged: Dispatch<SetStateAction<boolean>>;
-}
-
-const Home = ({ setLogged }: HomeProps) => {
+const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState<Category>(
     mockedCategories[0]
   );
@@ -27,7 +23,7 @@ const Home = ({ setLogged }: HomeProps) => {
 
   return (
     <Styled.HomeContainer>
-      <Menu path="home" setLogged={setLogged} />
+      <Menu path="home" />
       <Styled.HomeContentContainer>
         <Styled.HomeContentHeader>
           <Styled.TitleContainer>

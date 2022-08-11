@@ -6,14 +6,10 @@ import Button from "../../components/Button";
 import { mockedProducts } from "../../mocks";
 import SettingsProductCard from "../../components/SettingsProductCard";
 
-interface SettingsProps {
-  setLogged: Dispatch<SetStateAction<boolean>>;
-}
-
-const Settings = ({ setLogged }: SettingsProps) => {
+const Settings = () => {
   return (
     <Styled.SettingsContainer>
-      <Menu path="settings" setLogged={setLogged} />
+      <Menu path="settings" />
       <Styled.SettingsNavigationContainer>
         <h2>Configurações</h2>
         <Styled.SettingsNavigationButtonsList>

@@ -12,7 +12,7 @@ export const LoginPageContainer = styled.div`
   `}
 `;
 
-export const LoginFormContainer = styled.div`
+export const LoginFormContainer = styled.form`
   ${({ theme }) => css`
     width: 24rem;
     height: 28.875rem;
@@ -54,5 +54,16 @@ export const LoginLogoContainer = styled.div`
       width: 8rem;
       height: 8rem;
     }
+  `}
+`;
+
+export const ErrorMessage = styled.p`
+  ${({ theme }) => css`
+    color: red;
+    align-self: center;
+    font-size: small;
+    height: 2rem;
+    padding: 0 2rem;
+    text-align: center;
   `}
 `;

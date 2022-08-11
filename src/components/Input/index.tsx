@@ -1,4 +1,4 @@
-import { ChangeEventHandler, InputHTMLAttributes } from "react";
+import { InputHTMLAttributes } from "react";
 import { StyledInput } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {

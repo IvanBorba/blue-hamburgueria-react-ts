@@ -3,7 +3,7 @@ import * as Styled from "./styles";
 import logo from "../../assets/logo_patterns/logo.png";
 import Button from "../../components/Button";
 import { toast } from "react-hot-toast";
-import axios from "axios";
+import { api } from "../../services";
 import { useAuth } from "../../contexts/auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -41,11 +41,8 @@ const Login = () => {
   } = useForm<LoginData>({ resolver: yupResolver(loginSchema) });
 
   const handleLogin = (data: LoginData) => {
-    axios
-      .post(
-        "https://blue-hamburgueria-production.up.railway.app/auth/login",
-        data
-      )
+    api
+      .post("/auth/login", data)
       .then((res) => {
         login({ token: res.data.token, user: res.data.user });
       })

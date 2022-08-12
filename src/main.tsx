@@ -5,15 +5,18 @@ import { ThemeProvider } from "styled-components";
 import App from "./App";
 import theme from "./assets/styles/theme";
 import { AuthProvider } from "./contexts/auth";
+import { ProductsProvider } from "./contexts/products";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <ThemeProvider theme={theme}>
-          <App />
-        </ThemeProvider>
+        <ProductsProvider>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </ProductsProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>

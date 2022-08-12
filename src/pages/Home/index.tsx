@@ -2,19 +2,23 @@ import { DateTime } from "luxon";
 import { SearchIcon } from "../../assets/icons";
 import Menu from "../../components/Menu";
 import * as Styled from "./styles";
-import { mockedProducts } from "../../mocks";
 import ProductsList from "../../components/ProductsList";
 import { mockedCategories } from "../../mocks";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Category, Product } from "../../types";
 import OrderDetails from "../../components/OrderDetails";
+import { useProducts } from "../../contexts/products";
 
 const Home = () => {
+  const { products } = useProducts();
+
+  console.log(products);
+
   const [selectedCategory, setSelectedCategory] = useState<Category>(
     mockedCategories[0]
   );
 
-  const filteredProducts: Product[] = mockedProducts.filter(
+  const filteredProducts: Product[] = products.filter(
     (element) => element.categoryId === selectedCategory.id
   );
 
@@ -42,6 +46,7 @@ const Home = () => {
                 <Styled.CategoriesNavigationButton
                   active={element.name === selectedCategory.name}
                   onClick={() => setSelectedCategory(element)}
+                  key={element.id}
                 >
                   {element.name}
                 </Styled.CategoriesNavigationButton>

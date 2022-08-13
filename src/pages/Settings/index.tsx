@@ -7,15 +7,21 @@ import { useProducts } from "../../contexts/products";
 import { useState } from "react";
 import ProductModal from "../../components/ProductModal";
 import { Product } from "../../types";
+import DeleteProductModal from "../../components/DeleteProductModal";
 
 const Settings = () => {
   const { products } = useProducts();
 
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [openDeleteModal, setOpenDeleteModal] = useState<boolean>(false);
   const [product, setProduct] = useState<Product | undefined>(undefined);
 
   const handleOpenModal = () => {
     setOpenModal(!openModal);
+  };
+
+  const handleOpenDeleteModal = () => {
+    setOpenDeleteModal(!openDeleteModal);
   };
 
   return (
@@ -75,6 +81,7 @@ const Settings = () => {
           {products.map((element) => (
             <SettingsProductCard
               handleOpenModal={handleOpenModal}
+              handleOpenDeleteModal={handleOpenDeleteModal}
               setProduct={setProduct}
               product={element}
               key={element.id}
@@ -87,7 +94,18 @@ const Settings = () => {
         </Styled.ConfirmationContainer>
       </Styled.EntitiesEditContainer>
       {openModal && (
-        <ProductModal product={product} handleOpenModal={handleOpenModal} />
+        <ProductModal
+          setProduct={setProduct}
+          product={product}
+          handleOpenModal={handleOpenModal}
+        />
+      )}
+      {openDeleteModal && (
+        <DeleteProductModal
+          setProduct={setProduct}
+          productId={product?.id}
+          handleOpenDeleteModal={handleOpenDeleteModal}
+        />
       )}
     </Styled.SettingsContainer>
   );

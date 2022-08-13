@@ -1,10 +1,14 @@
-import { ErrorMessage, StyledInput } from "../../assets/styles/globalStyles";
+import {
+  ErrorMessage,
+  ModalOverlay,
+  StyledInput,
+} from "../../assets/styles/globalStyles";
 import * as Styled from "./styles";
 import Button from "../Button";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { mockedCategories } from "../../mocks";
 import { api } from "../../services";
 import toast from "react-hot-toast";
@@ -14,6 +18,7 @@ import { Product } from "../../types";
 interface ProductModalProsp {
   handleOpenModal: () => void;
   product?: Product;
+  setProduct: Dispatch<SetStateAction<Product | undefined>>;
 }
 
 interface NewProductData {
@@ -47,7 +52,11 @@ const updateProductSchema = yup.object().shape({
   image: yup.string().url("Formato de URL inválido"),
 });
 
-const ProductModal = ({ handleOpenModal, product }: ProductModalProsp) => {
+const ProductModal = ({
+  handleOpenModal,
+  product,
+  setProduct,
+}: ProductModalProsp) => {
   const { handleGetProducts } = useProducts();
 
   const [categoryId, setCategoryId] = useState<string>(
@@ -79,6 +88,7 @@ const ProductModal = ({ handleOpenModal, product }: ProductModalProsp) => {
         toast.success("Produto registrado com sucesso");
         handleGetProducts();
         handleOpenModal();
+        setProduct(undefined);
       })
       .catch(() => toast.error("Selecione uma categoria"));
   };
@@ -90,11 +100,12 @@ const ProductModal = ({ handleOpenModal, product }: ProductModalProsp) => {
       toast.success("Produto atualizado com sucesso");
       handleGetProducts();
       handleOpenModal();
+      setProduct(undefined);
     });
   };
 
   return (
-    <Styled.ModalOverlay>
+    <ModalOverlay>
       <Styled.ModalContainer
         onSubmit={
           product
@@ -146,7 +157,10 @@ const ProductModal = ({ handleOpenModal, product }: ProductModalProsp) => {
         }
         <div>
           <Button
-            onClick={handleOpenModal}
+            onClick={() => {
+              setProduct(undefined);
+              handleOpenModal();
+            }}
             size="small"
             text="Cancelar"
             variant="cancel"
@@ -154,7 +168,7 @@ const ProductModal = ({ handleOpenModal, product }: ProductModalProsp) => {
           <Button size="small" text="Enviar" type="submit" />
         </div>
       </Styled.ModalContainer>
-    </Styled.ModalOverlay>
+    </ModalOverlay>
   );
 };
 

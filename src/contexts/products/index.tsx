@@ -15,6 +15,7 @@ interface ProductsProviderProps {
 
 interface ProductsProviderData {
   products: Product[];
+  handleGetProducts: () => void;
 }
 
 const ProductsContext = createContext<ProductsProviderData>(
@@ -46,7 +47,7 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   }, [logged]);
 
   return (
-    <ProductsContext.Provider value={{ products }}>
+    <ProductsContext.Provider value={{ products, handleGetProducts }}>
       {children}
     </ProductsContext.Provider>
   );

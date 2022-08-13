@@ -6,11 +6,13 @@ import SettingsProductCard from "../../components/SettingsProductCard";
 import { useProducts } from "../../contexts/products";
 import { useState } from "react";
 import ProductModal from "../../components/ProductModal";
+import { Product } from "../../types";
 
 const Settings = () => {
   const { products } = useProducts();
 
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [product, setProduct] = useState<Product | undefined>(undefined);
 
   const handleOpenModal = () => {
     setOpenModal(!openModal);
@@ -71,7 +73,12 @@ const Settings = () => {
             <p>Adicionar Item</p>
           </Styled.AddEntityCard>
           {products.map((element) => (
-            <SettingsProductCard product={element} key={element.id} />
+            <SettingsProductCard
+              handleOpenModal={handleOpenModal}
+              setProduct={setProduct}
+              product={element}
+              key={element.id}
+            />
           ))}
         </Styled.EntitiesEditList>
         <Styled.ConfirmationContainer>
@@ -79,7 +86,9 @@ const Settings = () => {
           <Button text="Salvar mudanças" />
         </Styled.ConfirmationContainer>
       </Styled.EntitiesEditContainer>
-      {openModal && <ProductModal handleOpenModal={handleOpenModal} />}
+      {openModal && (
+        <ProductModal product={product} handleOpenModal={handleOpenModal} />
+      )}
     </Styled.SettingsContainer>
   );
 };

@@ -1,4 +1,3 @@
-import Input from "../../components/Input";
 import * as Styled from "./styles";
 import logo from "../../assets/logo_patterns/logo.png";
 import Button from "../../components/Button";
@@ -8,7 +7,8 @@ import { useAuth } from "../../contexts/auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { StyledInput } from "../../components/Input/styles";
+import { StyledInput } from "../../assets/styles/globalStyles";
+import { ErrorMessage } from "../../assets/styles/globalStyles";
 
 interface LoginData {
   email: string;
@@ -64,9 +64,9 @@ const Login = () => {
           placeholder="Senha"
           {...register("password")}
         />
-        <Styled.ErrorMessage>
+        <ErrorMessage>
           {errors.email?.message || errors.password?.message}
-        </Styled.ErrorMessage>
+        </ErrorMessage>
         <Button text="Entrar" size="large" type="submit" />
       </Styled.LoginFormContainer>
     </Styled.LoginPageContainer>

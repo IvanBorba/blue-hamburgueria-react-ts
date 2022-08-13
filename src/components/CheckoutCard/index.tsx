@@ -3,7 +3,7 @@ import * as Styled from "./styles";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { TrashIcon } from "../../assets/icons";
-import Input from "../Input";
+import { StyledInput } from "../../assets/styles/globalStyles";
 
 interface CheckoutCardProps {
   product: Product;
@@ -31,7 +31,7 @@ const CheckoutCard = ({ product }: CheckoutCardProps) => {
         <span>R${(quantity * product.price).toFixed(2)}</span>
       </Styled.CheckoutCardHeader>
       <Styled.CheckoutCardFooter>
-        <Input
+        <StyledInput
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Detalhes do produto"

@@ -27,3 +27,14 @@ export const StyledInput = styled.input<StyledInputProps>`
     `}
   `}
 `;
+
+export const ErrorMessage = styled.p`
+  ${({ theme }) => css`
+    color: red;
+    align-self: center;
+    font-size: small;
+    height: 2rem;
+    padding: 0 2rem;
+    text-align: center;
+  `}
+`;

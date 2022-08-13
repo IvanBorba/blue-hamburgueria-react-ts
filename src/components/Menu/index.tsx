@@ -2,7 +2,6 @@ import * as Styled from "./styles";
 import logo from "../../assets/logo_patterns/logo.png";
 import { HomeIcon, SettingsIcon, LogoutIcon } from "../../assets/icons";
 import { useNavigate } from "react-router-dom";
-import { Dispatch, SetStateAction } from "react";
 import toast from "react-hot-toast";
 import { useAuth } from "../../contexts/auth";
 

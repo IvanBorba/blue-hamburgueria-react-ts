@@ -27,3 +27,27 @@ export const StyledInput = styled.input<StyledInputProps>`
     `}
   `}
 `;
+
+export const ErrorMessage = styled.p`
+  ${({ theme }) => css`
+    color: red;
+    align-self: center;
+    font-size: small;
+    height: 2rem;
+    padding: 0 2rem;
+    text-align: center;
+  `}
+`;
+
+export const ModalOverlay = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `}
+`;

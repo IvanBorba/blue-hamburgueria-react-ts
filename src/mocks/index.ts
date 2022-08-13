@@ -132,19 +132,19 @@ export const mockedProducts: T.Product[] = [
 
 export const mockedCategories: T.Category[] = [
   {
-    id: "ef215c07-a2e4-495c-9e0f-5c10cc971d11",
+    id: "e7e77543-2515-4a5c-99f6-c8495ac45f0d",
     name: "Lanches",
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    id: "a6e86fe9-ca7f-40a3-9b95-331e749038f1",
+    id: "265c2b49-564a-4a5a-a758-ef7263eb2e9e",
     name: "Porções",
     createdAt: new Date(),
     updatedAt: new Date(),
   },
   {
-    id: "1c86eac1-f2b9-4bdf-8dc9-21bcd789da4f",
+    id: "f4dd96ac-33ea-4e95-bdd5-01e67e9af307",
     name: "Bebidas",
     createdAt: new Date(),
     updatedAt: new Date(),

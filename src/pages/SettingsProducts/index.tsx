@@ -9,8 +9,9 @@ import ProductModal from "../../components/ProductModal";
 import { Category, Product } from "../../types";
 import DeleteProductModal from "../../components/DeleteProductModal";
 import { useCategories } from "../../contexts/categories";
+import SettingsMenu from "../../components/SettingsMenu";
 
-const Settings = () => {
+const SettingsProducts = () => {
   const { products } = useProducts();
   const { categories } = useCategories();
 
@@ -37,39 +38,7 @@ const Settings = () => {
   return (
     <Styled.SettingsContainer>
       <Menu path="settings" />
-      <Styled.SettingsNavigationContainer>
-        <h2>Configurações</h2>
-        <Styled.SettingsNavigationButtonsList>
-          <Styled.SettingsNavigationButtonContainer>
-            <Styled.SettingsNavigationButtonSelected>
-              <MarketIcon />
-              <h2>Customize suas mesas</h2>
-              <p>Adicione mesas, configure nomes</p>
-            </Styled.SettingsNavigationButtonSelected>
-          </Styled.SettingsNavigationButtonContainer>
-          <Styled.SettingsNavigationButtonContainer active>
-            <Styled.SettingsNavigationButtonSelected active>
-              <PromotionIcon />
-              <h2>Gerenciar Produtos</h2>
-              <p>Edite os pratos, preços e etc.</p>
-            </Styled.SettingsNavigationButtonSelected>
-          </Styled.SettingsNavigationButtonContainer>
-          <Styled.SettingsNavigationButtonContainer>
-            <Styled.SettingsNavigationButtonSelected>
-              <PromotionIcon />
-              <h2>Gerenciar Categorias</h2>
-              <p>Adicione e edite categorias</p>
-            </Styled.SettingsNavigationButtonSelected>
-          </Styled.SettingsNavigationButtonContainer>
-          <Styled.SettingsNavigationButtonContainer>
-            <Styled.SettingsNavigationButtonSelected>
-              <InfoIcon />
-              <h2>Gerenciar usuários</h2>
-              <p>Gerencie o acesso ao sistema</p>
-            </Styled.SettingsNavigationButtonSelected>
-          </Styled.SettingsNavigationButtonContainer>
-        </Styled.SettingsNavigationButtonsList>
-      </Styled.SettingsNavigationContainer>
+      <SettingsMenu path="products" />
       <Styled.EntitiesEditContainer>
         <h2>Gerenciar Produtos</h2>
         <Styled.EntitiesEditCategoriesSelector className="entities-edit-categories-selector">
@@ -122,4 +91,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default SettingsProducts;

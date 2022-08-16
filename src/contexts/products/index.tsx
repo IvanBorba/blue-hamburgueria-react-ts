@@ -37,7 +37,6 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
     };
 
     api.get("/products", headers).then((res) => {
-      console.log(res);
       setProducts(res.data);
     });
   };

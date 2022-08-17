@@ -10,7 +10,7 @@ export const StyledInput = styled.input<StyledInputProps>`
     padding: 0 1rem;
     box-sizing: border-box;
     width: 18.625rem;
-    height: 3rem;
+    min-height: 3rem;
     background-color: ${theme.colors.baseBg1};
     border: 1px solid ${theme.colors.baseLine};
     border-radius: 8px;

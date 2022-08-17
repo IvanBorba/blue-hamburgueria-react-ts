@@ -147,14 +147,12 @@ const ProductModal = ({
             </option>
           ))}
         </Styled.Select>
-        {
-          <ErrorMessage>
-            {errors.name?.message ||
-              errors.description?.message ||
-              errors.price?.message ||
-              errors.image?.message}
-          </ErrorMessage>
-        }
+        <ErrorMessage>
+          {errors.name?.message ||
+            errors.description?.message ||
+            errors.price?.message ||
+            errors.image?.message}
+        </ErrorMessage>
         <div>
           <Button
             onClick={() => {

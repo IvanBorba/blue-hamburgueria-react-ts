@@ -28,7 +28,7 @@ const Menu = ({ path }: MenuProps) => {
         </Styled.MenuItem>
         <Styled.MenuItem active={path === "settings"}>
           <Styled.MenuItemButton
-            onClick={() => navigate("/settings")}
+            onClick={() => navigate("/settings/products")}
             active={path === "settings"}
           >
             <SettingsIcon />

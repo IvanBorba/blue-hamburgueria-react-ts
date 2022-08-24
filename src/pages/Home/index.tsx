@@ -111,6 +111,8 @@ const Home = () => {
             </Styled.TableSelect>
           </Styled.ProductsHeaderContainer>
           <ProductsList
+            isFavoritesList={isFavoritesList}
+            handleGetFavorites={handleGetFavorites}
             list={isFavoritesList ? userFavoritesList : filteredProducts}
           />
         </section>

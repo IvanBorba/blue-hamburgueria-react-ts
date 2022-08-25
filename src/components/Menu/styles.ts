@@ -17,6 +17,8 @@ export const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+
   img {
     width: 4rem;
     margin: 1.25rem 0;

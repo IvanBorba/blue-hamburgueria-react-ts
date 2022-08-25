@@ -7,4 +7,5 @@ export const ProductsListContainer = styled.div`
   gap: 4rem;
   margin-top: 3rem;
   justify-content: center;
+  margin-bottom: 3rem;
 `;

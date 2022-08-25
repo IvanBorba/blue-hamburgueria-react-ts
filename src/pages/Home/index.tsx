@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import { SearchIcon } from "../../assets/icons";
+import { DownIcon, SearchIcon } from "../../assets/icons";
 import Menu from "../../components/Menu";
 import * as Styled from "./styles";
 import ProductsList from "../../components/ProductsList";
@@ -9,10 +9,12 @@ import OrderDetails from "../../components/OrderDetails";
 import { useProducts } from "../../contexts/products";
 import { useCategories } from "../../contexts/categories";
 import { api } from "../../services";
+import { useTables } from "../../contexts/tables";
 
 const Home = () => {
   const { categories } = useCategories();
   const { products } = useProducts();
+  const { tables } = useTables();
 
   const [selectedCategory, setSelectedCategory] = useState<Category>(
     categories[0] || ({} as Category)
@@ -105,9 +107,9 @@ const Home = () => {
               <option value="" disabled>
                 Selecione a mesa
               </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+              {tables.map((elem) => {
+                return <option value={elem.number}>{elem.number}</option>;
+              })}
             </Styled.TableSelect>
           </Styled.ProductsHeaderContainer>
           <ProductsList

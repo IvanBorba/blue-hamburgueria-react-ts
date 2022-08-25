@@ -22,6 +22,7 @@ const Home = () => {
 
   const [isFavoritesList, setIsFavoritesList] = useState<boolean>(false);
   const [userFavoritesList, setUserFavoritesList] = useState<Product[]>([]);
+  const [searchInputValue, setSearchInputValue] = useState<string>("");
 
   const filteredProducts: Product[] = products.filter(
     (element) => selectedCategory && element.categoryId === selectedCategory.id
@@ -72,7 +73,11 @@ const Home = () => {
           </Styled.TitleContainer>
           <Styled.SearchInputContainer>
             <SearchIcon />
-            <input placeholder="Procure pelo sabor" />
+            <input
+              value={searchInputValue}
+              onChange={(e) => setSearchInputValue(e.target.value)}
+              placeholder="Procure pelo sabor"
+            />
           </Styled.SearchInputContainer>
         </Styled.HomeContentHeader>
         <section>
@@ -115,7 +120,17 @@ const Home = () => {
           <ProductsList
             isFavoritesList={isFavoritesList}
             handleGetFavorites={handleGetFavorites}
-            list={isFavoritesList ? userFavoritesList : filteredProducts}
+            list={
+              isFavoritesList
+                ? userFavoritesList
+                : searchInputValue !== ""
+                ? filteredProducts.filter((elem) =>
+                    elem.name
+                      .toLowerCase()
+                      .includes(searchInputValue.toLowerCase())
+                  )
+                : filteredProducts
+            }
           />
         </section>
       </Styled.HomeContentContainer>

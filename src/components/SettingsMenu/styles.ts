@@ -11,6 +11,7 @@ export const SettingsNavigationContainer = styled.div`
     padding: 1.5rem;
     box-sizing: border-box;
     color: ${theme.colors.textColor};
+    margin-left: 6.5rem;
   `}
 `;
 
